@@ -142,3 +142,25 @@ packages/RabbitMQ\.Client\.5\.1\.0/lib/net451/
 packages/RabbitMQ\.Client\.5\.1\.0/lib/netstandard1\.5/
 
 packages/RabbitMQ\.Client\.5\.1\.0/RabbitMQ\.Client\.5\.1\.0\.nupkg
+
+\.vs/EasyNetQ/xs/
+
+Publish/bin/Debug/netcoreapp2\.0/
+
+Publish/obj/Debug/netcoreapp2\.0/
+
+Publish/obj/
+
+Subscribe/bin/Debug/netcoreapp2\.0/
+
+Subscribe/obj/Debug/netcoreapp2\.0/
+
+Subscribe/obj/
+
+SubscribeAsync/bin/Debug/netcoreapp2\.0/
+
+SubscribeAsync/obj/Debug/netcoreapp2\.0/
+
+SubscribeAsync/obj/
+
+\.DS_Store

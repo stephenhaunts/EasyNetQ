@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="SubscribeAsync\obj\Debug\netcoreapp2.0\SubscribeAsync.AssemblyInfo.cs" />
+    <Compile Remove="Subscribe\obj\Debug\netcoreapp2.0\Subscribe.AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Subscribe\obj\Debug\netcoreapp2.0\Subscribe.AssemblyInfoInputs.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EasyNetQ" Version="3.1.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EasyNetQMessages\EasyNetQMessages.csproj" />
+  </ItemGroup>
+</Project>
