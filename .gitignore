@@ -164,3 +164,7 @@ SubscribeAsync/obj/Debug/netcoreapp2\.0/
 SubscribeAsync/obj/
 
 \.DS_Store
+
+PublishWithConfirm/bin/Debug/
+
+PublishWithConfirm/obj/x86/Debug/
