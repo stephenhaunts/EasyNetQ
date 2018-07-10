@@ -40,13 +40,35 @@ namespace PublishWithConfirm
                 Amount = 34.87m
             };
 
-            using (var bus = RabbitHutch.CreateBus("host=localhost"))
+            using (var bus = RabbitHutch.CreateBus("host=localhost;publisherConfirms=true;timeout=10"))
             {
-                bus.Publish(payment1);
-                bus.Publish(payment2);
-                bus.Publish(payment3);
-                bus.Publish(payment4);
+                Publish(bus, payment1);
+                Publish(bus, payment2);
+                Publish(bus, payment3);
+                Publish(bus, payment4);
+
+                Console.ReadLine();
             }
+        }
+
+        public static void Publish(IBus bus, CardPaymentRequestMessage message)
+        {
+            bus.PublishAsync(message).ContinueWith(task =>
+            {
+                // this only checks that the task finished
+                // IsCompleted will be true even for tasks in a faulted state
+                // we use if (task.IsCompleted && !task.IsFaulted) to check for success
+                if (task.IsCompleted)
+                {
+                    Console.WriteLine("Completed");
+                }
+                if (task.IsFaulted)
+                {
+                    Console.WriteLine("\n\n");
+                    Console.WriteLine(task.Exception);
+                    Console.WriteLine("\n\n");
+                }
+            });
         }
     }
 }
