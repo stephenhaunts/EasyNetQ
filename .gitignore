@@ -168,3 +168,15 @@ SubscribeAsync/obj/
 PublishWithConfirm/bin/Debug/
 
 PublishWithConfirm/obj/x86/Debug/
+
+PolymorphicPublish/bin/Debug/netcoreapp2\.1/
+
+PolymorphicPublish/obj/Debug/netcoreapp2\.1/
+
+PolymorphicPublish/obj/
+
+PolymorphicSubscribe/bin/Debug/netcoreapp2\.1/
+
+PolymorphicSubscribe/obj/Debug/netcoreapp2\.1/
+
+PolymorphicSubscribe/obj/
