@@ -130,3 +130,15 @@ packages/RabbitMQ\.Client\.5\.0\.1/lib/netstandard1\.5/RabbitMQ\.Client\.dll
 packages/RabbitMQ\.Client\.5\.0\.1/lib/netstandard1\.5/RabbitMQ\.Client\.xml
 
 packages/RabbitMQ\.Client\.5\.0\.1/RabbitMQ\.Client\.5\.0\.1\.nupkg
+
+\.vs/EasyNetQ/xs/sqlite3/
+
+packages/EasyNetQ\.3\.1\.1/
+
+packages/Microsoft\.Diagnostics\.Tracing\.EventSource\.Redist\.2\.0\.1/
+
+packages/RabbitMQ\.Client\.5\.1\.0/lib/net451/
+
+packages/RabbitMQ\.Client\.5\.1\.0/lib/netstandard1\.5/
+
+packages/RabbitMQ\.Client\.5\.1\.0/RabbitMQ\.Client\.5\.1\.0\.nupkg
