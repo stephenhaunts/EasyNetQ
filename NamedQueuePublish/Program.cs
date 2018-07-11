@@ -8,7 +8,7 @@ namespace NamedQueuePublish
     {
         static void Main(string[] args)
         {
-            var payment1 = new CardPaymentNamesQueue
+            var payment1 = new CardPaymentNamedQueue
             {
                 CardNumber = "1234123412341234",
                 CardHolderName = "Mr F Bloggs",
@@ -16,7 +16,7 @@ namespace NamedQueuePublish
                 Amount = 99.00m
             };
 
-            var payment2 = new CardPaymentNamesQueue
+            var payment2 = new CardPaymentNamedQueue
             {
                 CardNumber = "3456345634563456",
                 CardHolderName = "Mr S Claws",
@@ -24,7 +24,7 @@ namespace NamedQueuePublish
                 Amount = 15.00m
             };
 
-            var payment3 = new CardPaymentNamesQueue
+            var payment3 = new CardPaymentNamedQueue
             {
                 CardNumber = "6789678967896789",
                 CardHolderName = "Mrs E Curry",
@@ -32,7 +32,7 @@ namespace NamedQueuePublish
                 Amount = 1250.24m
             };
 
-            var payment4 = new CardPaymentNamesQueue
+            var payment4 = new CardPaymentNamedQueue
             {
                 CardNumber = "9991999299939994",
                 CardHolderName = "Mrs D Parton",

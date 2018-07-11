@@ -3,7 +3,7 @@
 namespace EasyNetQMessages
 {
     [Queue("CardPaymentQueue", ExchangeName = "CardPaymentExchange")]
-    public class CardPaymentNamesQueue
+    public class CardPaymentNamedQueue
     {
         public string CardNumber { get; set; }
         public string CardHolderName { get; set; }

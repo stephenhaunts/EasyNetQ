@@ -10,14 +10,14 @@ namespace NamedQueueSubscribe
         {
             using (var bus = RabbitHutch.CreateBus("host=localhost"))
             {
-                bus.Subscribe<CardPaymentNamesQueue>(string.Empty, HandleCardPaymentMessage);
+                bus.Subscribe<CardPaymentNamedQueue>(string.Empty, HandleCardPaymentMessage);
 
                 Console.WriteLine("Listening for messages. Hit <return> to quit.");
                 Console.ReadLine();
             }
         }
 
-        static void HandleCardPaymentMessage(CardPaymentNamesQueue paymentMessage)
+        static void HandleCardPaymentMessage(CardPaymentNamedQueue paymentMessage)
         {
             Console.WriteLine("Processing Payment = <" +
                               paymentMessage.CardNumber + ", " +
