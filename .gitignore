@@ -180,3 +180,7 @@ PolymorphicSubscribe/bin/Debug/netcoreapp2\.1/
 PolymorphicSubscribe/obj/Debug/netcoreapp2\.1/
 
 PolymorphicSubscribe/obj/
+
+packages/EasyNetQ\.3\.1\.2/lib/net451/
+
+packages/EasyNetQ\.3\.1\.2/lib/netstandard2\.0/

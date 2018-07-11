@@ -2,6 +2,6 @@
 {
     public interface IPayment
     {
-        double Amount { get; set; }
+        decimal Amount { get; set; }
     }
 }

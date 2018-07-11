@@ -7,6 +7,6 @@
         public string ExpiryDate { get; set; }
 
         // Interface implementation
-        public double Amount { get; set; }
+        public decimal Amount { get; set; }
     }
 }
