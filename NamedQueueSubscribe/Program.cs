@@ -1,12 +1,29 @@
 ﻿using System;
+using EasyNetQ;
+using EasyNetQMessages;
 
 namespace NamedQueueSubscribe
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            using (var bus = RabbitHutch.CreateBus("host=localhost"))
+            {
+                bus.Subscribe<CardPaymentNamesQueue>(string.Empty, HandleCardPaymentMessage);
+
+                Console.WriteLine("Listening for messages. Hit <return> to quit.");
+                Console.ReadLine();
+            }
+        }
+
+        static void HandleCardPaymentMessage(CardPaymentNamesQueue paymentMessage)
+        {
+            Console.WriteLine("Processing Payment = <" +
+                              paymentMessage.CardNumber + ", " +
+                              paymentMessage.CardHolderName + ", " +
+                              paymentMessage.ExpiryDate + ", " +
+                              paymentMessage.Amount + ">");
         }
     }
 }
