@@ -1,6 +1,7 @@
 ﻿using System;
 using EasyNetQ;
 using EasyNetQMessages;
+using EasyNetQMessages.Polymorphic;
 
 namespace CardPaymentTopicSubscriber
 {
@@ -10,20 +11,25 @@ namespace CardPaymentTopicSubscriber
         {
             using (var bus = RabbitHutch.CreateBus("host=localhost"))
             {
-                bus.Subscribe<CardPaymentRequestMessage>("payments", HandleCardPaymentMessage, x => x.WithTopic("payment.cardpayment"));
+                bus.Subscribe<IPayment>("payments", Handler, x => x.WithTopic("payment.cardpayment"));
 
                 Console.WriteLine("Listening for messages. Hit <return> to quit.");
                 Console.ReadLine();
             }
         }
 
-        static void HandleCardPaymentMessage(CardPaymentRequestMessage paymentMessage)
+        public static void Handler(IPayment payment)
         {
-            Console.WriteLine("Processing Payment = <" +
-                              paymentMessage.CardNumber + ", " +
-                              paymentMessage.CardHolderName + ", " +
-                              paymentMessage.ExpiryDate + ", " +
-                              paymentMessage.Amount + ">");
+            var cardPayment = payment as CardPayment;
+
+            if (cardPayment != null)
+            {
+                Console.WriteLine("Processing Card Payment = <" +
+                                  cardPayment.CardNumber + ", " +
+                                  cardPayment.CardHolderName + ", " +
+                                  cardPayment.ExpiryDate + ", " +
+                                  cardPayment.Amount + ">");
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using EasyNetQ;
 using EasyNetQMessages;
+using EasyNetQMessages.Polymorphic;
 
 namespace PurchaseOrderTopicSubscriber
 {
@@ -10,20 +11,28 @@ namespace PurchaseOrderTopicSubscriber
         {
             using (var bus = RabbitHutch.CreateBus("host=localhost"))
             {
-                bus.Subscribe<PurchaseOrderRequestMessage>("payments", HandlePurchaseOrder, x => x.WithTopic("payment.purchaseorder"));
+                bus.Subscribe<IPayment>("payments", Handler, x => x.WithTopic("payment.purchaseorder"));
 
                 Console.WriteLine("Listening for messages. Hit <return> to quit.");
                 Console.ReadLine();
+
             }
         }
 
-        static void HandlePurchaseOrder(PurchaseOrderRequestMessage purchaseOrder)
+        public static void Handler(IPayment payment)
         {
-            Console.WriteLine("Processing Purchase Order = <" +
-                               purchaseOrder.CompanyName + ", " +
-                               purchaseOrder.PoNumber + ", " +
-                               purchaseOrder.PaymentDayTerms + ", " +
-                               purchaseOrder.Amount + ">");
+            var purchaseOrder = payment as PurchaseOrder;
+
+
+            if (purchaseOrder != null)
+            {
+                Console.WriteLine("Processing Purchase Order = <" +
+                                  purchaseOrder.CompanyName + ", " +
+                                  purchaseOrder.PoNumber + ", " +
+                                  purchaseOrder.PaymentDayTerms + ", " +
+                                  purchaseOrder.Amount + ">");
+            }
         }
+      
     }
 }

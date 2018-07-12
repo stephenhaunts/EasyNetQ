@@ -1,6 +1,7 @@
 ﻿using System;
 using EasyNetQ;
 using EasyNetQMessages;
+using EasyNetQMessages.Polymorphic;
 
 namespace AccountsDeptTopicSubscriber
 {
@@ -10,36 +11,34 @@ namespace AccountsDeptTopicSubscriber
         {
             using (var bus = RabbitHutch.CreateBus("host=localhost"))
             {
-                bus.Subscribe<object>("payments", HandlePaymentMessage, x => x.WithTopic("payment.*"));
-               // bus.Subscribe<PurchaseOrderRequestMessage>("payments", HandlePaymentMessage, x => x.WithTopic("payment.*"));
-
+                bus.Subscribe<IPayment>("payments", Handler, x => x.WithTopic("payment.*"));//.WithTopic("payment.purchaseorder"));
 
                 Console.WriteLine("Listening for messages. Hit <return> to quit.");
                 Console.ReadLine();
             }
         }
 
-        static void HandlePaymentMessage(object paymentMessage)
+        public static void Handler(IPayment payment)
         {
-            if (paymentMessage is CardPaymentRequestMessage)
+            var cardPayment = payment as CardPayment;
+            var purchaseOrder = payment as PurchaseOrder;
+
+            if (cardPayment != null)
             {
-                var payment = paymentMessage as CardPaymentRequestMessage;
-                Console.WriteLine("Processing Payment = <" +
-                                  payment.CardNumber + ", " +
-                                  payment.CardHolderName + ", " +
-                                  payment.ExpiryDate + ", " +
-                                  payment.Amount + ">");
+                Console.WriteLine("Processing Card Payment = <" +
+                                  cardPayment.CardNumber + ", " +
+                                  cardPayment.CardHolderName + ", " +
+                                  cardPayment.ExpiryDate + ", " +
+                                  cardPayment.Amount + ">");
             }
-            else if (paymentMessage is PurchaseOrderRequestMessage)
+            else if (purchaseOrder != null)
             {
-                var payment = paymentMessage as PurchaseOrderRequestMessage;
                 Console.WriteLine("Processing Purchase Order = <" +
-                                  payment.CompanyName + ", " +
-                                  payment.PoNumber + ", " +
-                                  payment.PaymentDayTerms + ", " +
-                                  payment.Amount + ">"); 
+                                  purchaseOrder.CompanyName + ", " +
+                                  purchaseOrder.PoNumber + ", " +
+                                  purchaseOrder.PaymentDayTerms + ", " +
+                                  purchaseOrder.Amount + ">");
             }
         }
-            
     }
 }
