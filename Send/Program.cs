@@ -40,11 +40,29 @@ namespace Send
                 Amount = 34.87m
             };
 
+            var purchaseOrder1 = new PurchaseOrderRequestMessage
+            {
+                Amount = 134.25m,
+                CompanyName = "Wayne Enterprises",
+                PaymentDayTerms = 30,
+                PoNumber = "BM666"
+            };
+
+            var purchaseOrder2 = new PurchaseOrderRequestMessage
+            {
+                Amount = 99.00m,
+                CompanyName = "HeadBook",
+                PaymentDayTerms = 30,
+                PoNumber = "HB123"
+            };
+
             using (var bus = RabbitHutch.CreateBus("host=localhost"))
             {
                 bus.Send("my.paymentsqueue", payment1);
+                bus.Send("my.paymentsqueue", purchaseOrder1);
                 bus.Send("my.paymentsqueue", payment2);
                 bus.Send("my.paymentsqueue", payment3);
+                bus.Send("my.paymentsqueue", purchaseOrder2);
                 bus.Send("my.paymentsqueue", payment4);
             }
           
