@@ -238,3 +238,23 @@ ReceiveMultiple/bin/Debug/netcoreapp2\.1/
 ReceiveMultiple/obj/Debug/netcoreapp2\.1/
 
 ReceiveMultiple/obj/
+
+AccountsDeptTopicSubscriber/bin/Debug/netcoreapp2\.1/
+
+AccountsDeptTopicSubscriber/obj/
+
+CardPaymentTopicSubscriber/bin/Debug/netcoreapp2\.1/
+
+CardPaymentTopicSubscriber/obj/
+
+PurchaseOrderTopicSubscriber/bin/Debug/netcoreapp2\.1/
+
+PurchaseOrderTopicSubscriber/obj/Debug/netcoreapp2\.1/
+
+PurchaseOrderTopicSubscriber/obj/
+
+TopicPublisher/bin/Debug/netcoreapp2\.1/
+
+TopicPublisher/obj/Debug/netcoreapp2\.1/
+
+TopicPublisher/obj/
