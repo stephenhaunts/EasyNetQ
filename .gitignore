@@ -228,3 +228,7 @@ Receive/obj/
 Send/obj/Debug/netcoreapp2\.1/
 
 Send/obj/
+
+Receive/bin/Debug/netcoreapp2\.1/
+
+Send/bin/Debug/netcoreapp2\.1/
