@@ -43,6 +43,10 @@ namespace PolymorphicPublish
 
             using (var bus = RabbitHutch.CreateBus("host=localhost"))
             {
+                Console.WriteLine("Publishing messages with publish and subscribe.");
+                Console.WriteLine("  -- Polymorphic message.");
+                Console.WriteLine();
+
                 bus.Publish<IPayment>(cardPayment1);
                 bus.Publish<IPayment>(purchaseOrder1);
                 bus.Publish<IPayment>(cardPayment2);  

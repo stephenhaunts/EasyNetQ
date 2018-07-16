@@ -258,3 +258,7 @@ TopicPublisher/bin/Debug/netcoreapp2\.1/
 TopicPublisher/obj/Debug/netcoreapp2\.1/
 
 TopicPublisher/obj/
+
+packages/EasyNetQ\.3\.2\.0/lib/net451/
+
+packages/EasyNetQ\.3\.2\.0/lib/netstandard2\.0/

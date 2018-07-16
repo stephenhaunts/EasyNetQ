@@ -18,7 +18,8 @@ namespace RequestAsync
 
             using (var bus = RabbitHutch.CreateBus("host=localhost"))
             {
-                Console.WriteLine("Preparing to send message to RabbitMQ");
+                Console.WriteLine("Publishing messages with request and response.");
+                Console.WriteLine();
 
                 var task = bus.RequestAsync<CardPaymentRequestMessage, CardPaymentResponseMessage>(payment);
 

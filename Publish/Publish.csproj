@@ -13,7 +13,7 @@
     <None Remove="Subscribe\obj\Debug\netcoreapp2.0\Subscribe.AssemblyInfoInputs.cache" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="EasyNetQ" Version="3.1.2" />
+    <PackageReference Include="EasyNetQ" Version="3.2.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EasyNetQMessages\EasyNetQMessages.csproj" />

@@ -1,4 +1,5 @@
-﻿using EasyNetQ;
+﻿using System;
+using EasyNetQ;
 using EasyNetQMessages;
 
 namespace Publish
@@ -41,6 +42,9 @@ namespace Publish
 
             using (var bus = RabbitHutch.CreateBus("host=localhost"))
             {
+                Console.WriteLine("Publishing messages with publish and subscribe.");
+                Console.WriteLine();
+
                 bus.Publish(payment1);
                 bus.Publish(payment2);
                 bus.Publish(payment3);

@@ -18,7 +18,8 @@ namespace Request
 
             using (var bus = RabbitHutch.CreateBus("host=localhost"))
             {
-                Console.WriteLine("Preparing to send message to RabbitMQ");
+                Console.WriteLine("Publishing messages with request and response.");
+                Console.WriteLine();
 
                 var response = bus.Request<CardPaymentRequestMessage, CardPaymentResponseMessage>(payment);
                 Console.WriteLine(response.AuthCode);

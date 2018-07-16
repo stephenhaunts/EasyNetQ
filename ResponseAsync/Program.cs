@@ -22,7 +22,7 @@ namespace ResponseAsync
 
         static void Main(string[] args)
         {
-            // create a group of worker objects
+            // Create a group of worker objects
             var workers = new BlockingCollection<MyWorker>();
             for (int i = 0; i < 10; i++)
             {
@@ -31,7 +31,7 @@ namespace ResponseAsync
 
             using (var bus = RabbitHutch.CreateBus("host=localhost"))
             {
-                // respond to requests
+                // Respond to requests
                 bus.RespondAsync<CardPaymentRequestMessage, CardPaymentResponseMessage>(request =>
                     Task.Factory.StartNew(() =>
                     {

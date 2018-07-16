@@ -43,6 +43,9 @@ namespace TopicPublisher
 
             using (var bus = RabbitHutch.CreateBus("host=localhost"))
             {
+                Console.WriteLine("Publishing messages with topic publish.");
+                Console.WriteLine();
+
                 bus.Publish<IPayment>(cardPayment1, "payment.cardpayment");
                 bus.Publish<IPayment>(purchaseOrder1, "payment.purchaseorder");
                 bus.Publish<IPayment>(cardPayment2, "payment.cardpayment");

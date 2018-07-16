@@ -23,7 +23,6 @@ namespace PurchaseOrderTopicSubscriber
         {
             var purchaseOrder = payment as PurchaseOrder;
 
-
             if (purchaseOrder != null)
             {
                 Console.WriteLine("Processing Purchase Order = <" +

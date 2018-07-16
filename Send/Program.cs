@@ -58,6 +58,9 @@ namespace Send
 
             using (var bus = RabbitHutch.CreateBus("host=localhost"))
             {
+                Console.WriteLine("Publishing messages with send and receive.");
+                Console.WriteLine();
+
                 bus.Send("my.paymentsqueue", payment1);
                 //bus.Send("my.paymentsqueue", purchaseOrder1);
                 bus.Send("my.paymentsqueue", payment2);

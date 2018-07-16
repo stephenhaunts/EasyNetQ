@@ -42,6 +42,10 @@ namespace NamedQueuePublish
 
             using (var bus = RabbitHutch.CreateBus("host=localhost"))
             {
+                Console.WriteLine("Publishing messages with publish and subscribe.");
+                Console.WriteLine("   --- Controled exchange and queue name.");
+                Console.WriteLine();
+
                 bus.Publish(payment1);
                 bus.Publish(payment2);
                 bus.Publish(payment3);

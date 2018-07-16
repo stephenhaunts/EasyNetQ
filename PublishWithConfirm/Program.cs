@@ -42,6 +42,10 @@ namespace PublishWithConfirm
 
             using (var bus = RabbitHutch.CreateBus("host=localhost;publisherConfirms=true;timeout=10"))
             {
+                Console.WriteLine("Publishing messages with publish and subscribe.");
+                Console.WriteLine("   - Enabled publisher confirm.");
+                Console.WriteLine();
+
                 Publish(bus, payment1);
                 Publish(bus, payment2);
                 Publish(bus, payment3);
