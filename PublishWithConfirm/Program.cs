@@ -59,12 +59,9 @@ namespace PublishWithConfirm
         {
             bus.PublishAsync(message).ContinueWith(task =>
             {
-                // this only checks that the task finished
-                // IsCompleted will be true even for tasks in a faulted state
-                // we use if (task.IsCompleted && !task.IsFaulted) to check for success
-                if (task.IsCompleted)
+                if (task.IsCompleted && !task.IsFaulted)
                 {
-                    Console.WriteLine("Completed");
+                    Console.WriteLine("Task completed and not faulted.");
                 }
                 if (task.IsFaulted)
                 {

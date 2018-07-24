@@ -45,7 +45,7 @@
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="EasyNetQ">
-      <HintPath>..\packages\EasyNetQ.3.2.0\lib\net451\EasyNetQ.dll</HintPath>
+      <HintPath>..\packages\EasyNetQ.3.3.0\lib\net451\EasyNetQ.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
