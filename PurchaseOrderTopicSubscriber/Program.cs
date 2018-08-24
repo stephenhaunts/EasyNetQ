@@ -13,7 +13,7 @@ namespace PurchaseOrderTopicSubscriber
             {
                 bus.Subscribe<IPayment>("purchaseorders", Handler, x => x.WithTopic("payment.purchaseorder"));
 
-                Console.WriteLine("Listening for messages. Hit <return> to quit.");
+                Console.WriteLine("Listening for (payment.purchaseorer) messages. Hit <return> to quit.");
                 Console.ReadLine();
 
             }

@@ -13,7 +13,7 @@ namespace CardPaymentTopicSubscriber
             {
                 bus.Subscribe<IPayment>("cards", Handler, x => x.WithTopic("payment.cardpayment"));
 
-                Console.WriteLine("Listening for messages. Hit <return> to quit.");
+                Console.WriteLine("Listening for (payment.cardpayment) messages. Hit <return> to quit.");
                 Console.ReadLine();
             }
         }
