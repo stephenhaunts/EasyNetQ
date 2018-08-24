@@ -62,10 +62,10 @@ namespace Send
                 Console.WriteLine();
 
                 bus.Send("my.paymentsqueue", payment1);
-                //bus.Send("my.paymentsqueue", purchaseOrder1);
+                bus.Send("my.paymentsqueue", purchaseOrder1);
                 bus.Send("my.paymentsqueue", payment2);
                 bus.Send("my.paymentsqueue", payment3);
-                //bus.Send("my.paymentsqueue", purchaseOrder2);
+                bus.Send("my.paymentsqueue", purchaseOrder2);
                 bus.Send("my.paymentsqueue", payment4);
             }
           

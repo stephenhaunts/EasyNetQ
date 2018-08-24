@@ -63,6 +63,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardPaymentTopicSubscriber"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PurchaseOrderTopicSubscriber", "PurchaseOrderTopicSubscriber\PurchaseOrderTopicSubscriber.csproj", "{C371EADE-4016-445B-84D1-11CDDC5AC48A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountsTopicSubscriber", "AccountsTopicSubscriber\AccountsTopicSubscriber.csproj", "{8EFC78E0-431C-4D83-BFF4-BEBD2063FB32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -153,6 +155,10 @@ Global
 		{C371EADE-4016-445B-84D1-11CDDC5AC48A}.Debug|x86.Build.0 = Debug|Any CPU
 		{C371EADE-4016-445B-84D1-11CDDC5AC48A}.Release|x86.ActiveCfg = Release|Any CPU
 		{C371EADE-4016-445B-84D1-11CDDC5AC48A}.Release|x86.Build.0 = Release|Any CPU
+		{8EFC78E0-431C-4D83-BFF4-BEBD2063FB32}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8EFC78E0-431C-4D83-BFF4-BEBD2063FB32}.Debug|x86.Build.0 = Debug|Any CPU
+		{8EFC78E0-431C-4D83-BFF4-BEBD2063FB32}.Release|x86.ActiveCfg = Release|Any CPU
+		{8EFC78E0-431C-4D83-BFF4-BEBD2063FB32}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5697B3DA-531C-4155-8BB8-9390F89208DD} = {369C796E-DA7A-4F7C-A98E-EF283395EDA0}
@@ -180,5 +186,6 @@ Global
 		{99E3E19E-F785-4EDF-B30C-F24841432226} = {F4C0D46C-75F1-40F5-8744-C0F73D4F8509}
 		{A6F8ABEE-EC01-4C91-ACEA-9937668B0162} = {F4C0D46C-75F1-40F5-8744-C0F73D4F8509}
 		{C371EADE-4016-445B-84D1-11CDDC5AC48A} = {F4C0D46C-75F1-40F5-8744-C0F73D4F8509}
+		{8EFC78E0-431C-4D83-BFF4-BEBD2063FB32} = {F4C0D46C-75F1-40F5-8744-C0F73D4F8509}
 	EndGlobalSection
 EndGlobal

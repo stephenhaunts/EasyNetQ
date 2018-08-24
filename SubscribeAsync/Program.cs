@@ -13,7 +13,7 @@ namespace SubscribeAsync
             {
                 bus.SubscribeAsync<CardPaymentRequestMessage>("cardPayment", message => Task.Factory.StartNew(() =>
                 {
-                    Console.WriteLine("Processing Payment = <" + 
+                    Console.WriteLine("Payment = <" + 
                                       message.CardNumber + ", " + 
                                       message.CardHolderName + ", " + 
                                       message.ExpiryDate + ", " + 

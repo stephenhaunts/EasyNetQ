@@ -19,7 +19,7 @@ namespace Subscribe
 
         static void HandleCardPaymentMessage(CardPaymentRequestMessage paymentMessage)
         {
-            Console.WriteLine("Processing Payment = <" +
+            Console.WriteLine("Payment = <" +
                               paymentMessage.CardNumber + ", " +
                               paymentMessage.CardHolderName + ", " +
                               paymentMessage.ExpiryDate + ", " +

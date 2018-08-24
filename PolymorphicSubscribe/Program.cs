@@ -24,7 +24,7 @@ namespace PolymorphicSubscribe
 
             if (cardPayment != null)
             {
-                Console.WriteLine("Processing Card Payment = <" +
+                Console.WriteLine("Card Payment = <" +
                                   cardPayment.CardNumber + ", " +
                                   cardPayment.CardHolderName + ", " +
                                   cardPayment.ExpiryDate + ", " +
@@ -32,7 +32,7 @@ namespace PolymorphicSubscribe
             }
             else if (purchaseOrder != null)
             {
-                Console.WriteLine("Processing Purchase Order = <" +
+                Console.WriteLine("Purchase Order = <" +
                                   purchaseOrder.CompanyName + ", " +
                                   purchaseOrder.PoNumber + ", " +
                                   purchaseOrder.PaymentDayTerms + ", " +

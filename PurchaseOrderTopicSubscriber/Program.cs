@@ -11,7 +11,7 @@ namespace PurchaseOrderTopicSubscriber
         {
             using (var bus = RabbitHutch.CreateBus("host=localhost"))
             {
-                bus.Subscribe<IPayment>("payments", Handler, x => x.WithTopic("payment.purchaseorder"));
+                bus.Subscribe<IPayment>("purchaseorders", Handler, x => x.WithTopic("payment.purchaseorder"));
 
                 Console.WriteLine("Listening for messages. Hit <return> to quit.");
                 Console.ReadLine();

@@ -19,7 +19,7 @@ namespace NamedQueueSubscribe
 
         static void HandleCardPaymentMessage(CardPaymentNamedQueue paymentMessage)
         {
-            Console.WriteLine("Processing Payment = <" +
+            Console.WriteLine("Payment = <" +
                               paymentMessage.CardNumber + ", " +
                               paymentMessage.CardHolderName + ", " +
                               paymentMessage.ExpiryDate + ", " +
